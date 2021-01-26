@@ -51,7 +51,7 @@
      <h2>Already Bought:</h2>
      <ul>
        <li ng-repeat="item in list2.items2">
-          {{ item.quantity }} of {{item.name }}
+          Bought {{ item.quantity }} of {{item.name }}
        </li>
      </ul>
      <div ng-if="!list2.items2.length" class="emptyMessage"> Nothing bought yet. </div>
