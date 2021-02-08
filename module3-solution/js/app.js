@@ -9,7 +9,7 @@ angular.module('NarrowItDownApp', [])
 
 function foundMenus() {
   var ddo ={
-    templateUrl: "../loader/loader.html",
+    templateUrl: "loader.html",
     scope: {
       foundItems: '<',
       onRemove: '&'
@@ -62,7 +62,7 @@ function NarrowItDownController(MenuSearchService) {
             var items = response.data.menu_items;
             var foundItems=[];
             searchTerm = searchTerm.toLowerCase();
-            
+
             for (var i = 0; i < items.length; i++) {
               if (items[i].description.indexOf(searchTerm)!==-1 && searchTerm !== '') {
                 foundItems.push(items[i]);
