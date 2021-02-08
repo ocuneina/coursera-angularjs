@@ -9,7 +9,7 @@ angular.module('NarrowItDownApp', [])
 
 function foundMenus() {
   var ddo ={
-    templateUrl: "loader.html",
+    templateUrl: "loader/loader.html",
     scope: {
       foundItems: '<',
       onRemove: '&'
