@@ -1,0 +1,9 @@
+
+    <h3>List of Menu Categories </h3>
+    <ul class="no-bullets" >
+      <li ng-repeat="item in foundItems" class="padding">
+        <b>{{ item.short_name }}</b> - <b>{{item.name}}</b> ({{ item.description }})
+
+        <button ng-click="onRemove({index: $index});"> Don't want this one!</button>
+      </li>
+    </ul>
