@@ -64,7 +64,7 @@ function NarrowItDownController(MenuSearchService) {
             searchTerm = searchTerm.toLowerCase();
 
             for (var i = 0; i < items.length; i++) {
-              if (items[i].description.indexOf(searchTerm)!==-1 && searchTerm !== '') {
+              if (items[i].description.toLowerCase().indexOf(searchTerm)!==-1 && searchTerm !== '') {
                 foundItems.push(items[i]);
               } //endif
             }; //endfor
