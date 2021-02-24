@@ -1,0 +1,28 @@
+body {
+  font-size: 1.5em;
+}
+
+div.tabs > a, div.tabs > button {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+.activeState {
+  font-weight: bold;
+}
+
+.hlink:hover {
+  display: inline-block;
+  font-weight: bold;
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0 5px 0 5px;
+}
+.padding {
+  padding: 5px;
+}

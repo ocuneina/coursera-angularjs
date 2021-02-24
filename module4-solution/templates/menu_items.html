@@ -1,0 +1,14 @@
+<a class= "hlink" ui-sref="home" ui-sref-active="activeState">Home</a> &lt;
+<a class= "hlink" ui-sref="categories" ui-sref-active="activeState">Menu</a> &lt;
+<span>Menu Items</span>
+
+<h3>List of Menu Items </h3>
+<ul>
+  <li class="padding"
+      ng-repeat="item in ctrl.items"
+      ui-sref="item({categoryShortName: item.short_name})" >
+      <b>[{{ item.short_name}}] &mdash; {{ item.name}} </b><br>
+      {{ item.description}}
+  </li>
+</ul>
+<a ui-sref="categories" ui-sref-active="activeState" class="padding, hlink">Back to Main Categories Page</a>
