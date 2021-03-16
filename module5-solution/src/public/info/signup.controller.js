@@ -20,18 +20,17 @@ function SignupController(MenuService, RegistrationService, $scope) {
 
 
     // Menu Item verification
-    dish = reg.user.favoriteDish.toUpperCase() ;
+    dish = reg.user.favoriteDish.toUpperCase();
 
         MenuService.getMenuItemByShortName(dish)
           .then(function(response) {
               reg.user.menuItem = response;
               reg.validMenuItem = true;
-              reg.errorMsg = false;
 
               RegistrationService.saveInfo(reg.user);
 
               reg.savedUser = true;
-              console.log('Information saved');
+
 
 
           })
@@ -40,7 +39,9 @@ function SignupController(MenuService, RegistrationService, $scope) {
             reg.errorMsg = true;
             console.log('wrong number');
           })
-
+          
+          console.log('Information saved');
+          reg.errorMsg = false;
   };
 }
 
