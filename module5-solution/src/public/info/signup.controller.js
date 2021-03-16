@@ -14,21 +14,14 @@ function SignupController(MenuService, RegistrationService, $scope) {
   reg.errorMsg = false;
   reg.savedUser = false;
 
-  reg.submit = function () {
-    reg.completed = true;
-    console.log("button pressed");
+  reg.checkMenuItem = function () {
 
-
-    // Menu Item verification
     dish = reg.user.favoriteDish.toUpperCase();
 
         MenuService.getMenuItemByShortName(dish)
           .then(function(response) {
               reg.user.menuItem = response;
               reg.validMenuItem = true;
-
-              RegistrationService.saveInfo(reg.user);
-              reg.savedUser = true;
 
           })
           .catch(function(response){
@@ -37,8 +30,20 @@ function SignupController(MenuService, RegistrationService, $scope) {
             console.log('wrong number');
           })
 
-          reg.errorMsg = false;
-          console.log('Information saved');
+  }
+
+  reg.submit = function () {
+    if (reg.validMenuItem) {
+
+      reg.completed = true;
+      console.log("button pressed");
+
+      RegistrationService.saveInfo(reg.user);
+      reg.savedUser = true;
+      reg.errorMsg = false;
+      console.log('Information saved');
+    }    
+
   };
 }
 

@@ -55,8 +55,8 @@
       <input type="text"
              name="favoriteDish"
              ng-model="signCtrl.user.favoriteDish"
-             required>
-             <!-- ng-blur="reg.checkMenuItem()" -->
+             required
+             ng-blur="signCtrl.checkMenuItem()">
        <span ng-if="(regForm.favoriteDish.$error.required || signCtrl.errorMsg) && regForm.favoriteDish.$touched">
                Please, enter valid menu number
              </span>
@@ -64,13 +64,13 @@
 
       <input type="submit" class="btn btn-success" value="Submit"
               style="margin-top: 10px;"
-              ng-disabled="regForm.$invalid">
+              ng-disabled="(regForm.$invalid)">
 
     </form>
   </fieldset>
 
   <div id="info"  ng-if="signCtrl.completed && !signCtrl.errorMsg">
-      Your information has been saved! 
+      Your information has been saved!
   </div>
 
 </div>
