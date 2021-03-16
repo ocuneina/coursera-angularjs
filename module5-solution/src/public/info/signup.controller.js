@@ -28,10 +28,7 @@ function SignupController(MenuService, RegistrationService, $scope) {
               reg.validMenuItem = true;
 
               RegistrationService.saveInfo(reg.user);
-
               reg.savedUser = true;
-
-
 
           })
           .catch(function(response){
@@ -39,9 +36,9 @@ function SignupController(MenuService, RegistrationService, $scope) {
             reg.errorMsg = true;
             console.log('wrong number');
           })
-          
-          console.log('Information saved');
+
           reg.errorMsg = false;
+          console.log('Information saved');
   };
 }
 
